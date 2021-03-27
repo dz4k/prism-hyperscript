@@ -13,18 +13,20 @@
 			}
 		},
 		'operator': {
-			pattern: /\+|-|\/|\*|<\s|>|<=|>=|==|===|!=|!==|=|\.\.|(\w)\.|%|\||!|$|\b()(?:is|am|as|and|or|no|closest|the|of|first|last|on|is\sa|is\san|s|ms|seconds|milliseconds)\b/,
+			pattern: /\+|-|\/|\*|\\|<\s|>|<=|>=|==|===|!=|!==|=|\.\.|(\w)\.|%|\||!|$|\b()(?:is|am|as|and|or|no|closest|the|of|first|last|on|is\sa|is\san|s|ms|seconds|milliseconds)\b/,
 			lookbehind: true,
 		},
 		'builtin': /\b(?:I|me|my|it|its|result|event|target|detail)\b/,
-		'function': /[-A-Za-z0-9]+(?=\()/i,
+		'function': /[A-Za-z0-9]+(?=\()/i,
 		'class-ref': {
-			pattern: /\s\.[-\w\d_\$]+\b/,
-			alias: 'selector'
+			pattern: /\s\.[\-\w\d_\$]+/,
+			alias: 'selector',
+			greedy: true
 		},
 		'id-ref': {
-			pattern: /\s#[-\w\d_\$]+\b/,
-			alias: 'selector'
+			pattern: /#[\-\w\d_\$]+/,
+			alias: 'selector',
+			greedy: true
 		},
 		'selector': /<[^\s].*\/>/,
 		'boolean': /\b(?:true|false|null)\b/,

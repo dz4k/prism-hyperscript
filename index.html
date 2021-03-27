@@ -8,9 +8,20 @@
 <script src="https://unpkg.com/hyperscript.org@0.0.8/dist/_hyperscript_w9y.min.js"></script>
 <script src="prism-hyperscript.js"></script>
 
-<textarea cols="80" rows="10" _="on load or input put my value into #preview then call Prism.highlightElement(#preview)"></textarea>
+<style>
+:root, textarea {
+	color-scheme: white black;
+	background: black;
+	color: white;
+}
+</style>
 
-<pre><code id="preview" class="lang-hyperscript"></code></pre>
+<textarea id="input" cols="80" rows="10" placeholder="write code here to see how it looks highlighted"></textarea>
+
+<pre><code id="preview" class="lang-hyperscript" _="
+	on load or input from #input
+		put #input's value into me
+		then call Prism.highlightElement(me)"></code></pre>
 
 <pre><code class="lang-hyperscript">on mousedown(clientX, clientY)
 	call event.preventDefault()
