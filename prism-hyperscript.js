@@ -13,7 +13,7 @@
 			}
 		},
 		'operator': {
-			pattern: /\+|-|\/|\*|\\|<\s|>|<=|>=|==|===|!=|!==|=|\.\.|(\w)\.|%|\||!|$|\b()(?:is|am|as|and|or|no|closest|the|of|first|last|on|is\sa|is\san|s|ms|seconds|milliseconds)\b/,
+			pattern: /\+|\b-\b|\/|\*|\\|<\s|>|<=|>=|==|===|!=|!==|=|\.\.|(\w)\.|%|\||!|$|\b()(?:is|am|as|and|or|no|closest|the|of|first|last|on|is\sa|is\san|s|ms|seconds|milliseconds)\b/,
 			lookbehind: true,
 		},
 		'builtin': /\b(?:I|me|my|it|its|result|event|target|detail)\b/,
