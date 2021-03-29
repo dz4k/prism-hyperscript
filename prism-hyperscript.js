@@ -1,23 +1,24 @@
 
 (Prism => {
-	Prism.languages.hyperscript = {
+	Prism.languages.hyperscript = {};
+	Object.assign(Prism.languages.hyperscript, {
 		'comment': /\-\-.*/,
 		'punctuation': /[(){}[\],:;\?&]/,
 		'keyword': {
-			pattern: /\b(?:on|def|js|worker|eventsource|socket|init|add|async|call|get|fetch|hide|measure|if|js|log|put|remove|repeat\sforever|repeat\sfor|repeat\sin|repeat\swhile|repeat\suntil\sevent|repeat until|repeat|return|send|settle|set|show|take|throw|toggle\sbetween|toggle|transition|trigger|wait for|wait|tell|go|then|end|while|until|for|in|from|to|with|over)\b/g,
+			pattern: /\b(?:on|def|js|worker|eventsource|socket|init|behavior|install|add|async|call|get|fetch|hide|measure|if|js|log|put|remove|repeat\sforever|repeat\sfor|repeat\sin|repeat\swhile|repeat\suntil\sevent|repeat until|repeat|return|send|settle|set|show|take|throw|toggle\sbetween|toggle|transition|trigger|wait for|wait|tell|go|then|end|while|until|for|in|from|to|with|over|is an|is a|am|as|and|or|no|closest|the|of|first|last|on|seconds|milliseconds|s|ms)\b/g,
 			inside: {
 				'marker': {
-					pattern: /\b(?:on|def|js|worker|eventsource|socket|init|add|async|call|get|fetch|hide|measure|if|js|log|put|remove|repeat\sforever|repeat\sfor|repeat\sin|repeat\swhile|repeat\suntil\sevent|repeat\suntil|repeat|return|send|set|settle|show|take|throw|toggle\sbetween|toggle|transition|trigger|wait for|wait|tell|go|end|for)\b/g,
+					pattern: /\b(?:on|def|js|worker|eventsource|socket|init|behavior|install|add|async|call|get|fetch|hide|measure|if|js|log|put|remove|repeat\sforever|repeat\sfor|repeat\sin|repeat\swhile|repeat\suntil\sevent|repeat\suntil|repeat|return|send|set|settle|show|take|throw|toggle\sbetween|toggle|transition|trigger|wait for|wait|tell|go|end|for)\b/g,
 					alias: 'bold',
 				}
 			}
 		},
 		'operator': {
-			pattern: /\+|\b-\b|\/|\*|\\|<\s|>|<=|>=|==|===|!=|!==|=|\.\.|(\w)\.|%|\||!|$|\b()(?:is|am|as|and|or|no|closest|the|of|first|last|on|is\sa|is\san|s|ms|seconds|milliseconds)\b/,
+			pattern: /\+|\s-\s|\/|\*|\\|<\s|>|<=|>=|==|===|!=|!==|=|\.\.|(\w)\.|%|\||!|$/,
 			lookbehind: true,
 		},
 		'builtin': /\b(?:I|me|my|it|its|result|event|target|detail)\b/,
-		'function': /[A-Za-z0-9]+(?=\()/i,
+		'function': /[A-Za-z0-9]+(?=\()/,
 		'class-ref': {
 			pattern: /\s\.[\-\w\d_\$]+/,
 			alias: 'selector',
@@ -36,18 +37,28 @@
 		},
 		'number': /(\d+\.?|\d*\.\d+)(s|ms)?/,
 		'hs-template-literal': {
-			pattern: /`[^\n`]*`/,
+			pattern: /`[^\n`]*`/, // ` //
 			greedy: true,
 			inside: {
-				'string': {
-					pattern: /`\$\{|}\$\{|}`|`.*[^\\]\$\{|`.*`|\}.*[^\\]\$\{|\}.*`/,
+				'template-punctuation': {
+					pattern: /^`|`$/,
+					alias: 'string'
+				},
+				'interpolation': {
+					pattern: /((?:^|[^\\])(?:\\{2})*)\${(?:[^{}]|{(?:[^{}]|{[^}]*})*})+}/,
+					lookbehind: true,
 					inside: {
-						operator: /^}|\$\{$/
-					}
-				}
+						'interpolation-punctuation': {
+							pattern: /^\${|}$/,
+							alias: 'punctuation'
+						},
+						rest: Prism.languages.javascript
+					},
+				},
+				'string': /[\s\S]+/,
 			}
 		}
-	}
+	})
 
 	// `
 
