@@ -60,8 +60,6 @@
 		}
 	})
 
-	// `
-
 	if (Prism.languages.markup) {
 		Prism.languages.markup.tag.addInlined('script', 'hyperscript')
 		Prism.languages.markup.tag.addAttribute('_', 'hyperscript')
