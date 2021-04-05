@@ -1,5 +1,10 @@
 
-(Prism => {
+(prismHyperscript => {
+	if (typeof module === 'object' 
+		&& module.exports) module.exports = prismHyperscript;
+	else if ('Prism' in this) prismHyperscript(Prism)	
+})(Prism => {
+
 	Prism.languages.hyperscript = {};
 	Object.assign(Prism.languages.hyperscript, {
 		'comment': /\-\-.*/,
@@ -7,7 +12,7 @@
 		'keyword': {
 			pattern: /\b(?:on|def|js|worker|eventsource|socket|init|behavior|install|add|async|call|get|fetch|hide|measure|if|js|log|put|remove|repeat\sforever|repeat\sfor|repeat\sin|repeat\swhile|repeat\suntil\sevent|repeat until|repeat|return|send|settle|set|show|take|throw|toggle\sbetween|toggle|transition|trigger|wait for|wait|tell|go|then|end|while|until|for|in|from|to|with|over|is an|is a|am|as|and|or|no|closest|the|of|first|last|on|seconds|milliseconds|s|ms)\b/g,
 			inside: {
-				'marker': {
+				'hs-start': {
 					pattern: /\b(?:on|def|js|worker|eventsource|socket|init|behavior|install|add|async|call|get|fetch|hide|measure|if|js|log|put|remove|repeat\sforever|repeat\sfor|repeat\sin|repeat\swhile|repeat\suntil\sevent|repeat\suntil|repeat|return|send|set|settle|show|take|throw|toggle\sbetween|toggle|transition|trigger|wait for|wait|tell|go|end|for)\b/g,
 					alias: 'bold',
 				}
@@ -36,7 +41,7 @@
 			greedy: true,
 		},
 		'number': /(\d+\.?|\d*\.\d+)(s|ms)?/,
-		'hs-template-literal': {
+		'template-string': {
 			pattern: /`[^\n`]*`/, // ` //
 			greedy: true,
 			inside: {
@@ -52,7 +57,7 @@
 							pattern: /^\${|}$/,
 							alias: 'punctuation'
 						},
-						rest: Prism.languages.javascript
+						rest: Prism.languages.hyperscript
 					},
 				},
 				'string': /[\s\S]+/,
@@ -64,4 +69,4 @@
 		Prism.languages.markup.tag.addInlined('script', 'hyperscript')
 		Prism.languages.markup.tag.addAttribute('_', 'hyperscript')
 	}
-})(Prism)
+})

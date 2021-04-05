@@ -3,8 +3,7 @@
   "version": "1.0.0",
   "description": "",
   "main": "prism-hyperscript.js",
-  "scripts": {
-  },
+  "scripts": {},
   "repository": {
     "type": "git",
     "url": "git+https://github.com/dz4k/prism-hyperscript.git"
@@ -15,7 +14,5 @@
     "url": "https://github.com/dz4k/prism-hyperscript/issues"
   },
   "homepage": "https://github.com/dz4k/prism-hyperscript#readme",
-  "dependencies": {
-    "prismjs": "git://github.com/PrismJS/prism.git#e4ad22ad72bc30ab0e95ec32f26f351477dc369a"
-  }
+  "dependencies": {}
 }

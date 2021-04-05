@@ -19,9 +19,10 @@
 <textarea id="input" cols="80" rows="10" placeholder="write code here to see how it looks highlighted"></textarea>
 
 <pre><code id="preview" class="lang-hyperscript" _="
-	on load or input from #input
+	on input from #input or load
 		put #input's value into me
-		then call Prism.highlightElement(me)"></code></pre>
+		then call Prism.highlightElement(me)
+"></code></pre>
 
 <pre><code class="lang-hyperscript">on mousedown(clientX, clientY)
 	call event.preventDefault()
@@ -41,6 +42,8 @@
 			mouseup(pageX, pageY) from document
 		add { left: `${pageX - xoff}px`, top: `${pageY - yoff}px` }
 	end
+
+    `i am a ${template + 1 or 0}`
 
 	transition margin-top to 0
 	           box-shadow to '0 0 0 0'
