@@ -1,7 +1,7 @@
 {
   "name": "prism-hyperscript",
   "version": "1.0.0",
-  "description": "",
+  "description": "A Prism language definition for _hyperscript (hyperscript.org)",
   "main": "prism-hyperscript.js",
   "scripts": {},
   "repository": {

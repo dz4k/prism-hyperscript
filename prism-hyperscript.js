@@ -10,7 +10,7 @@
 		'comment': /\-\-.*/,
 		'punctuation': /[(){}[\],:;\?&]/,
 		'keyword': {
-			pattern: /\b(?:on|def|js|worker|eventsource|socket|init|behavior|install|add|async|call|get|fetch|hide|measure|if|js|log|put|remove|repeat\sforever|repeat\sfor|repeat\sin|repeat\swhile|repeat\suntil\sevent|repeat until|repeat|return|send|settle|set|show|take|throw|toggle\sbetween|toggle|transition|trigger|wait for|wait|tell|go|then|end|while|until|for|in|from|to|with|over|is an|is a|am|as|and|or|no|closest|the|of|first|last|on|seconds|milliseconds|s|ms)\b/g,
+			pattern: /\b(?:on|def|js|worker|eventsource|socket|init|behavior|install|add|async|call|get|fetch|hide|measure|if|js|log|put|remove|repeat\sforever|repeat\sfor|repeat\sin|repeat\swhile|repeat\suntil\sevent|repeat until|repeat|return|send|settle|set|show|take|throw|toggle\sbetween|toggle|transition|trigger|wait for|wait|tell|go|then|end|while|until|for|in|from|to|with|over|into|before|after|at end of|at start of|is an|is a|am|as|and|or|no|closest|the|of|first|last|on|seconds|milliseconds|s|ms)\b/g,
 			inside: {
 				'hs-start': {
 					pattern: /\b(?:on|def|js|worker|eventsource|socket|init|behavior|install|add|async|call|get|fetch|hide|measure|if|js|log|put|remove|repeat\sforever|repeat\sfor|repeat\sin|repeat\swhile|repeat\suntil\sevent|repeat\suntil|repeat|return|send|set|settle|show|take|throw|toggle\sbetween|toggle|transition|trigger|wait for|wait|tell|go|end|for)\b/g,
@@ -19,7 +19,7 @@
 			}
 		},
 		'operator': {
-			pattern: /\+|\s-\s|\/|\*|\\|<\s|>|<=|>=|==|===|!=|!==|=|\.\.|(\w)\.|%|\||!|$/,
+			pattern: /\+|\s-\s|\/|\*|\\|<\s|>|<=|>=|==|===|!=|!==|=|\.\.|(\w)\.|\%|\||!|\$/,
 			lookbehind: true,
 		},
 		'builtin': /\b(?:I|me|my|it|its|result|event|target|detail)\b/,
@@ -34,7 +34,10 @@
 			alias: 'selector',
 			greedy: true
 		},
-		'selector': /<[^\s].*\/>/,
+		'selector': {
+			pattern: /<[^\s].*\/>/,
+			greedy: true,
+		},
 		'boolean': /\b(?:true|false|null)\b/,
 		'string': {
 			pattern: /("[^\n]*[^\\]?"|'[^\n]*[^\\]?')/,
