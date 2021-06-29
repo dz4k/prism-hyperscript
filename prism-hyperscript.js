@@ -115,6 +115,8 @@ wait for|wait|fetch|tell|go|increment|decrement|halt|end|for)$|
 
 	if (Prism.languages.markup) {
 		Prism.languages.markup.tag.addInlined('script', 'hyperscript')
-		Prism.languages.markup.tag.addAttribute('_', 'hyperscript')
+		if ('addAttribute' in Prism.languages.markup.tag) {
+			Prism.languages.markup.tag.addAttribute('_', 'hyperscript')
+		}
 	}
 })
