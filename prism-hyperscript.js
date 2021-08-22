@@ -25,7 +25,7 @@
 			alias: 'selector',
 			inside: {
 				'attr-name': {
-					pattern: /(\^[@)[^=]*/,
+					pattern: /(^\[@)[^=]*/,
 					lookbehind: true,
 				},
 				'attr-value': /"[^\n"]*"|'[^\n']*'/,                 //"
