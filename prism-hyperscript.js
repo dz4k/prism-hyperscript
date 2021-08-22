@@ -10,7 +10,7 @@
 		'comment': /\-\-.*/,
 		'punctuation': /[(){}[\],:;\?&]/,
 		'url': {
-			pattern: /((?=fetch|require)\s)[^`"'\s][^\s]*/, // `
+			pattern: /((?:fetch|require)\s)[^`"'\s][^\s]*/, // `
 			lookbehind: true,
 			greedy: true,
 		},
