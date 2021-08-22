@@ -1,0 +1,3 @@
+[submodule "prism-live"]
+	path = prism-live
+	url = https://github.com/PrismJS/live
