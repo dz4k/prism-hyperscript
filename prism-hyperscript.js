@@ -10,7 +10,7 @@
 		'comment': /\-\-.*/,
 		'punctuation': /[(){}[\],:;\?&]/,
 		'url': {
-			pattern: /(fetch\s)[^`"'\s][^\s]*/, // `
+			pattern: /((?=fetch|require)\s)[^`"'\s][^\s]*/, // `
 			lookbehind: true,
 			greedy: true,
 		},
@@ -56,7 +56,7 @@ wait for|wait|fetch|tell|go|increment|decrement|halt|make an|
 make a|make|then|end|while|until|for|in|from|to|with|over|into|
 before|after|at end of|at start of|is an|is a|is not|is|am|as|
 and|or|no|closest|the|of|first|last|random|local|element|global|
-on|seconds|milliseconds|(\s)s|(\s)ms)
+on|seconds|milliseconds|(\s)s|(\s)ms)\\b
 `.split('\n').join(''), 'g'),
 			lookbehind: true,
 			inside: {
