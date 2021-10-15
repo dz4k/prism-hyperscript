@@ -48,7 +48,7 @@
 		'keyword': {
 			pattern: new RegExp(`
 \\b(?:on|def|js|worker|eventsource|socket|init|behavior|install|require|
-catch|add|async|call|get|hide|measure|if|else|js|log|put|remove|
+catch|add|async|call|get|hide|measure|if|else|js|log|put|remove|append|
 repeat forever|repeat for|repeat in|repeat while|
 repeat until event|repeat until|repeat|return|send|settle|set|
 show|take|throw|toggle between|toggle|transition|trigger|
@@ -63,7 +63,7 @@ on|seconds|milliseconds|(\s)s|(\s)ms)\\b
 				'hs-start': {
 					pattern: new RegExp(`
 ^(?:on|def|js|worker|eventsource|socket|init|behavior|install|require|
-catch|add|async|call|get|hide|measure|if|else|js|log|put|remove|
+catch|add|async|call|get|hide|measure|if|else|js|log|put|remove|append|
 repeat forever|repeat for|repeat in|repeat while|
 repeat until event|repeat until|repeat|return|send|set|settle|
 show|take|throw|toggle between|toggle|transition|trigger|
