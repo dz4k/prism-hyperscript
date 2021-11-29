@@ -49,14 +49,15 @@
 			pattern: new RegExp(`
 \\b(?:on|def|js|worker|eventsource|socket|init|behavior|install|require|
 catch|add|async|call|get|hide|measure|if|else|js|log|put|remove|append|
-repeat forever|repeat for|repeat in|repeat while|
-repeat until event|repeat until|repeat|return|send|settle|set|
-show|take|throw|toggle between|toggle|transition|trigger|
+repeat forever|repeat for|repeat in|repeat while|times|
+repeat until event|repeat until|repeat|return|send|settle|set|default|
+show|take|throw|toggle between|toggle|transition|trigger|continue|breakpoint|
 wait for|wait|fetch|tell|go|increment|decrement|halt|make an|
-make a|make|then|end|while|until|for|in|from|to|with|over|into|
-before|after|at end of|at start of|is an|is a|is not|is|am|as|
-and|or|no|closest|the|of|first|last|random|local|element|global|
-on|seconds|milliseconds|(\s)s|(\s)ms)\\b
+make a|make|then|end|while|until|for|in|from|to|by|with|over|into|
+before|after|at end of|at start of|is an|is a|is not|is not a|is not an|is|am|
+as|as a|as an|called|and|or|no|closest|the|of|first|last|random|
+local|element|global|match|matches|do not match|does not match|
+contain|contains|include|includes|on|seconds|millisecondss|(\s)s|(\s)ms)\\b
 `.split('\n').join(''), 'g'),
 			lookbehind: true,
 			inside: {
@@ -64,9 +65,9 @@ on|seconds|milliseconds|(\s)s|(\s)ms)\\b
 					pattern: new RegExp(`
 ^(?:on|def|js|worker|eventsource|socket|init|behavior|install|require|
 catch|add|async|call|get|hide|measure|if|else|js|log|put|remove|append|
-repeat forever|repeat for|repeat in|repeat while|
+repeat forever|repeat for|repeat in|repeat while|default|
 repeat until event|repeat until|repeat|return|send|set|settle|
-show|take|throw|toggle between|toggle|transition|trigger|
+show|take|throw|toggle between|toggle|transition|trigger|continue|breakpoint|
 wait for|wait|fetch|tell|go|increment|decrement|halt|end|for)$|
 ^make
 `.split('\n').join(''), 'g'),
