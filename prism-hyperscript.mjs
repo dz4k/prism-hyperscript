@@ -1,8 +1,5 @@
 
-(prismHyperscript => {
-            this.module && this.module.exports = prismHyperscript
-            this.Prism && prismHyperscript(this.Prism)
-        }) (Prism => {
+export default (Prism => {
 
 	Prism.languages.hyperscript = {};
 	Object.assign(Prism.languages.hyperscript, {

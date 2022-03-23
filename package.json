@@ -3,7 +3,10 @@
   "version": "1.0.5",
   "description": "A Prism language definition for _hyperscript (hyperscript.org)",
   "main": "prism-hyperscript.js",
-  "scripts": {},
+  "module": "prism-hyperscript.mjs",
+  "scripts": {
+    "prepublish": "node build-browser.js"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/dz4k/prism-hyperscript.git"
