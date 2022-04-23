@@ -1,6 +1,6 @@
 
 (prismHyperscript => {
-            this.module && this.module.exports = prismHyperscript
+            this.module && (this.module.exports = prismHyperscript)
             this.Prism && prismHyperscript(this.Prism)
         }) (Prism => {
 
